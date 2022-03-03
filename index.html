@@ -5,19 +5,27 @@
 <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″ />
 <title>Chatbot</title>
 <style>
-body { 
-	color: #421; font-weight: bold; font-size: 39px; background: #EE4; background-width: 100%;
-	background-image: url("bot.png"); width: 1400px; height: 1000px;
+body, html {
+  height: 100%;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("bot.png");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 span { 
 	color: #711; 
 } 
 ::-webkit-input-placeholder { 
 	color: #711 
-}
-#main { 
-	position: fixed; width: 100%; 
-	border: 0px solid #421; padding: 20px; 
 }
 #main div { 
 	margin: 10px; 
@@ -28,7 +36,7 @@ span {
 </style>
 </head>
 <body>
-<div id="main" style="top: 50%;">
+<div id="main" class="bg" style="">
 	<div style="margin-left: 10%;">Unknown: <span id="user"></span></div>
 	<div style="margin-left: 10%;">Daffabot: <span id="chatbot"></span></div>
 	<div style="margin-left: 10%;"><input id="input" type="text" placeholder="katakan sesuatu..." autocomplete="off"/></div>
