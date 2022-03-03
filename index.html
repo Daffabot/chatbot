@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd”>
+<html xmlns=”http://www.w3.org/1999/xhtml”>
+<head>
+<meta name="viewport" content="width=device-width" initial-scale="4.0" maximum-scale="4.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Chatbot</title>
+<style>
+body { 
+	color: #421; font-weight: bold; font-size: 15px; background: #EE4; 
+	background-image: url("bot.png"); background-repeat: repeat-y; 
+}
+span { 
+	color: #711; 
+} 
+::-webkit-input-placeholder { 
+	color: #711 
+}
+#main { 
+	position: fixed; top: 40%; right: -60px; width: 400px; 
+	border: 0px solid #421; padding: 20px; 
+}
+#main div { 
+	margin: 10px; 
+} 
+#input { 
+	border: 0; background: #EBE547; padding: 5px; border: 1px solid #421; 
+}
+</style>
+</head>
+<body>
+<div id="main">
+	<div>Unknown: <span id="user"></span></div>
+	<div>Daffabot: <span id="chatbot"></span></div>
+	<div><input id="input" type="text" placeholder="katakan sesuatu..." autocomplete="off"/></div>
+</div>
+<script type="text/javascript">
+var trigger = [
+   	["assalamualaikum", "assalamualaikum wr wb.", "assalamualaikum warahmatullahi wabarakatuh"],
+	["hi","halo","hey","hai","hello"],
+	["p","peh"],
+	["how are you", "how is life", "how are things"],
+	["bagaimana kabar kamu","bagaimana kabar mu","bagaimana kabarmu"],
+	["what are you doing", "what is going on"],
+	["apa yang sedang kamu lakukan","apa yang kamu lakukan","kamu sedang apa","sekarang kamu lagi apa","lagi ngapain","kamu lagi apa","kamu lagi ngapain","ngapain aja kamu"],
+	["how old are you"],
+	["berapa umur kamu","berapa umurmu","berapa usia kamu","berapa usiamu","sekarang kamu umurnya berapa","umur kamu berapa"],
+	["who are you", "are you human", "are you bot", "are you human or bot"],
+	["who created you", "who made you"],
+	["your name please",  "your name", "may i know your name", "what is your name"],
+	["i love you"],
+	["happy", "good"],
+	["bad", "bored", "tired"],
+	["help me", "tell me story", "tell me joke"],
+	["ah", "yes", "ok", "okay", "nice", "thanks", "thank you"],
+	["anjay"],
+	["bye", "good bye", "goodbye", "see you later"]
+];
+var reply = [
+	["Waalaikumsalam", "Waalaikumsalam wr wb.", "Waalaikumsalam warahmatullahi wabarakatuh"],
+	["Hi","Halo","Hai","Hey","Hello"],
+	["Ada apa anak dajjal","p = atheis","Salam dulu kek, kayak gak pernah diajarin aja"],
+	["Fine", "Pretty well", "Fantastic"],
+	["Alhamdulillah sehat","Aku baik-baik saja, bagaimana denganmu?"],
+	["Nothing much", "About to go to sleep", "Can you guest?", "I don't know actually"],
+	["Lagi tidur","Nggak tau aku juga","Sedang menunggu jawabanmu","Mau tau banget atau mau tau doang?"], 
+	["I am 1 day old"],
+	["Umurku baru 1 hari, karena baru diciptakan oleh masterku"],
+	["I am just a bot", "I am a bot. What are you?"],
+	["Daffa Ahmad Ibrahim", "Allah"],
+	["I am nameless", "I don't have a name"],
+	["I love you too", "Me too"],
+	["Have you ever felt bad?", "Glad to hear it"],
+	["Why?", "Why? You shouldn't!", "Try watching TV"],
+	["I will", "What about?"],
+	["Tell me a story", "Tell me a joke", "Tell me about yourself", "You are welcome"],
+	["Apaan dih"],
+	["Bye", "Goodbye", "See you later"]
+];
+var alternative = ["Haha...", "Eh..."];
+document.querySelector("#input").addEventListener("keypress", function(e){
+	var key = e.which || e.keyCode;
+	if(key === 13){ //Enter button
+		var input = document.getElementById("input").value;
+		document.getElementById("user").innerHTML = input;
+		output(input);
+	}
+});
+function output(input){
+	try{
+		var product = input + "=" + eval(input);
+	} catch(e){
+		var text = (input.toLowerCase()).replace(/[^\w\s\d]/gi, ""); //remove all chars except words, space and 
+		text = text.replace(/ a /g, " ").replace(/i feel /g, "").replace(/whats/g, "what is").replace(/please /g, "").replace(/ please/g, "");
+		if(compare(trigger, reply, text)){
+			var product = compare(trigger, reply, text);
+		} else {
+			var product = alternative[Math.floor(Math.random()*alternative.length)];
+		}
+	}
+	document.getElementById("chatbot").innerHTML = product;
+	speak(product);
+	document.getElementById("input").value = ""; //clear input value
+}
+function compare(arr, array, string){
+	var item;
+	for(var x=0; x<arr.length; x++){
+		for(var y=0; y<array.length; y++){
+			if(arr[x][y] == string){
+				items = array[x];
+				item =  items[Math.floor(Math.random()*items.length)];
+			}
+		}
+	}
+	return item;
+}
+function speak(string){
+	var utterance = new SpeechSynthesisUtterance();
+	utterance.voice = speechSynthesis.getVoices().filter(function(voice){return voice.name == "Agnes";})[0];
+	utterance.text = string;
+	utterance.lang = "in_ID";
+	utterance.volume = 1; //0-1 interval
+	utterance.rate = 0.7;
+	utterance.pitch = 1; //0-2 interval
+	speechSynthesis.speak(utterance);
+}
+</script>
+</body>
+</html>
