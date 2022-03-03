@@ -31,15 +31,18 @@ span {
 	margin: 10px; 
 } 
 #input { 
-	border: 0; background: #EBE547; padding: 5px; border: 1px solid #421; 
+	border: 0; background: white; padding: 5px; border: 1px solid #421; 
+}
+.sms {
+top: 70%;
 }
 </style>
 </head>
 <body>
 <div id="main" class="bg" style="">
-	<div style="margin-left: 10%;">Unknown: <span id="user"></span></div>
-	<div style="margin-left: 10%;">Daffabot: <span id="chatbot"></span></div>
-	<div style="margin-left: 10%;"><input id="input" type="text" placeholder="katakan sesuatu..." autocomplete="off"/></div>
+	<div class="sms" style="margin-left: 10%;">Unknown: <span id="user"></span></div>
+	<div class="sms" style="margin-left: 10%;">Daffabot: <span id="chatbot"></span></div>
+	<div class="sms" style="margin-left: 10%;"><input id="input" type="text" placeholder="katakan sesuatu..." autocomplete="off"/></div>
 </div>
 <script type="text/javascript">
 var trigger = [
