@@ -119,7 +119,7 @@ function speak(string){
 	utterance.text = string;
 	utterance.lang = "in_ID";
 	utterance.volume = 1; //0-1 interval
-	utterance.rate = 1;
+	utterance.rate = 0.8;
 	utterance.pitch = 1; //0-2 interval
 	speechSynthesis.speak(utterance);
 }
