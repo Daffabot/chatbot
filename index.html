@@ -59,15 +59,22 @@ var trigger = [
 	["who are you", "are you human", "are you bot", "are you human or bot"],
         ["siapa kamu","siapa dirimu","siapa ini","kamu siapa","apa kamu manusia","apakah kamu manusia","kamu manusia atau robot","kamu itu siapa","apakah kamu robot","kamu robot","apa kamu robot"],
 	["who created you", "who made you"],
-       
+        ["siapa yang menciptakan kamu","siapa yang menciptakanmu","siapa penciptamu","yang menciptakanmu siapa","kamu diciptakan siapa","kamu dibuat siapa","kamu diciptakan oleh siapa","kamu dibuat oleh siapa","siapa yang membuatmu","kamu dibuat oleh siapa"],
 	["your name please",  "your name", "may i know your name", "what is your name"],
+        ["nama kamu siapa", "namamu siapa","bolehkah aku mengetahui nama kamu","siapa namamu","siapa nama kamu"],
 	["i love you"],
+        ["aku mencintaimu", "aku mencintai kamu", aku cinta kamu", "aku menyukaimu", "aku menyukai kamu"],
 	["happy", "good"],
+        ["baik", "senang"],
 	["bad", "bored", "tired"],
 	["help me", "tell me story", "tell me joke"],
 	["ah", "yes", "ok", "okay", "nice", "thanks", "thank you"],
 	["anjay"],
-	["bye", "good bye", "goodbye", "see you later"]
+	["bye", "good bye", "goodbye", "see you later"],
+        ["buruk", "bosan", "lelah"],
+        ["tolong saya", "ceritakan cerita", "ceritakan lelucon"],
+        ["ya", "oke", "bagus", "terima kasih"],
+        ["selamat tinggal", "sampai jumpa"]
 ];
 var reply = [
 	["Wa alaikumsalam", "Wa alaikumsalam warahmatullahi wabarakatuh"],
@@ -84,13 +91,20 @@ var reply = [
 	["Daffa Ahmad Ibrahim", "My Master"],
         ["Oleh Daffa Ahmad Ibrahim", "Olsh Masterku"],
 	["I am nameless", "I don't have a name"],
+        ["Aku belum mempunyai nama resmi", "Aku belum dikasih nama sama Masterku, hiks :'( "],
 	["I love you too", "Me too"],
+        ["Aku juga mencintaimu sayang", "Aku juga menyukaimu"],
 	["Have you ever felt bad?", "Glad to hear it"],
 	["Why?", "Why? You shouldn't!", "Try watching TV"],
 	["I will", "What about?"],
 	["Tell me a story", "Tell me a joke", "Tell me about yourself", "You are welcome"],
 	["Apaan dih"],
-	["Bye", "Goodbye", "See you later"]
+	["Bye", "Goodbye", "See you later"],
+        ["Apakah Anda pernah merasa tidak enak?", "Senang mendengarnya"],
+        ["Mengapa?", "Mengapa? Seharusnya tidak!", "Cobalah menonton TV"],
+        ["Ya, saya akan lakukan", "Bagaimana dengan itu?"],
+        ["Ceritakan sebuah cerita", "Ceritakan lelucon", "Ceritakan tentang diri Anda", "Sama-sama"],
+        ["Sampai jumpa", "Selamat tinggal", "Sampai jumpa lagi"]
 ];
 var alternative = ["Haha...", "Eh..."];
 document.querySelector("#input").addEventListener("keypress", function(e){
