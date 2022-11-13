@@ -19,7 +19,7 @@ body, html {
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 span { 
 	color: #711; 
@@ -35,12 +35,28 @@ span {
 }
 #block { position: fixed; top: 55%;
 }
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('send.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  transition: width 0.4s ease-in-out;
+}
+input[type=text]:focus {
+  width: 100%;
+}
 </style>
 </head>
 <body>
 <div id="main" class="bg">
 <div id="block">
-	<div class="sms" style="margin-left: 10%;">Unknown: <span id="user"></span></div>
+	<div class="sms" style="margin-left: 10%;">You: <span id="user"></span></div>
 	<div class="sms" style="margin-left: 10%;">Daffabot: <span id="chatbot"></span></div>
 	<div class="sms" style="margin-left: 10%;"><input id="input" type="text" placeholder="katakan sesuatu..." autocomplete="off"/></div>
 </div>
