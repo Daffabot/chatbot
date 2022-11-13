@@ -1,25 +1,22 @@
-<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd”>
-<html xmlns=”http://www.w3.org/1999/xhtml”>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chatbot</title>
-<style>
+<html xmlns="”http://www.w3.org/1999/xhtml”">
+ <head> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>Chatbot | Daffabot</title> 
+  <style>
 body, html {
   color: black;
   height: 100%;
+  width: 100%;
 }
-
 .bg {
-  /* The image used */
-  background-image: url("bot.png");
-
+  background: #D3F4FB;
   /* Full height */
   height: 100%;
-
-  /* Center and scale the image nicely */
+  /* Center and scale background nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  box-sizing: border-box;
 }
 span { 
 	color: #711; 
@@ -30,7 +27,9 @@ span {
 #main div { 
 	margin: 10px; 
 }
-#block { position: fixed; top: 55%;
+#block {
+  position: fixed;
+  top: 55%;
 }
 input[type=text] {
   width: 130px;
@@ -38,7 +37,7 @@ input[type=text] {
   border: 2px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
-  background-color: white;
+  background-color: #CCECF8;
   background-image: url("send.png");
   background-position: 10px 10px; 
   background-repeat: no-repeat;
@@ -47,18 +46,104 @@ input[type=text] {
 }
 input[type=text]:focus {
   width: 100%;
+  border: 2px solid #C4E4EE;
+  background-color: #CCECF8;
 }
-</style>
-</head>
-<body>
-<div id="main" class="bg">
-<div id="block">
-	<div class="sms" style="margin-left: 10%;">Unknown: <span id="user"></span></div>
-	<div class="sms" style="margin-left: 10%;">Daffabot: <span id="chatbot"></span></div>
-	<div class="sms" style="margin-left: 10%;"><input id="input" type="text" placeholder="type here..." autocomplete="off"/></div>
-</div>
-</div>
-<script type="text/javascript">
+            /*In this part we will make the round shape 
+        of the face,and the basic structure of face
+            like add some color of face,height,width etc*/
+.face {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 20%;
+  background: #CFE1E1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+            }
+.face::before {
+    /*In this part we will make 
+     the mouth of the face*/
+  content: "";
+  position: absolute;
+  top: 120px;
+  width: 150px;
+  height: 70px; 
+  background-size: 4px;  
+  background-image: linear-gradient(90deg, white 50%, black 50%);
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+  transition: 0.5s;
+            }
+.face:hover::before {
+     /*Here we will add the hover effects. 
+       Like when the cursor will came on the mouth the 
+       mouth will closed that means is radius
+       will be decreased*/
+  top: 120px;
+  width: 150px;
+  height: 20px;
+  background-size: 4px;   
+  background-image: linear-gradient(90deg, white 50%, black 50%);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+            }
+     /*In this part we will make
+      the eyes of the face*/
+.eyes {
+  position: relative;
+  top: -30px;
+  display: flex;
+            }
+.eyes .eye {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: block;
+  background: #69D5D8;
+  margin: 0 15px;
+  border-radius: 50%;
+            }
+.eyes .eye::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: #02314B;
+  border-radius: 50%;
+            }
+</style> 
+ </head> 
+ <body class="bg"> 
+  <section> 
+   <div class="face" id="face" style="top: 0; left: 21%;"> 
+    <div class="eyes"> 
+     <div class="eye" id="eye"></div> 
+     <div class="eye" id="eye"></div> 
+    </div> 
+   </div> 
+  </section> 
+  <br> 
+  <span> <br> 
+   <div id="main"> 
+    <div id="block"> 
+     <div class="sms" style="margin-left: 0;">
+       Unknown: 
+      <span id="user"></span> 
+     </div> 
+     <div class="sms" style="margin-left: 0;">
+       Daffabot: 
+      <span id="chatbot"></span> 
+     </div> 
+     <div class="sms" style="margin-left: 0;"> 
+      <input id="input" type="text" placeholder="type here..." autocomplete="off" style="cursor: pointer;"> 
+     </div> 
+    </div> 
+   </div> <script type="text/javascript">
 var trigger = [
    	["assalamualaikum", "assalamualaikum wr wb.", "assalamualaikum warahmatullahi wabarakatuh"],
 	["hi","halo","hey","hai","hello"],
@@ -167,5 +252,72 @@ function speak(string){
 	speechSynthesis.speak(utterance);
 }
 </script>
-</body>
+<script>
+            const input = document.querySelector('input');
+            const body = document.querySelector('body');
+            const log = document.getElementById('eye');
+
+            input.addEventListener("click", eyeball);
+            body.addEventListener("mousemove", eyeballa);
+
+            function eyeball() {
+
+                var eye = document.querySelectorAll(".eye");
+
+                eye.forEach(function (eye) {
+
+                    let x =
+
+        eye.getBoundingClientRect().left + eye.clientWidth / 2;
+
+                    let y = 
+
+        eye.getBoundingClientRect().top + eye.clientHeight / 2;
+
+                    let radian = 
+
+                Math.atan2(event.pageX - x, event.pageY - y);
+
+                    let rot = 
+
+            radian * (180 / Math.PI) * -1 + 270;
+
+                    eye.style.transform = 
+
+                    "rotate(" + rot + "deg)";
+
+                });
+
+            }
+
+function eyeballa() {
+
+var eye = document.querySelectorAll(".eye");
+
+                eye.forEach(function (eye) {
+                    
+                    let x =
+                    
+                    eye.getBoundingClientRect().left + eye.clientWidth / 2;
+                    
+                    let y = 
+                    
+                    eye.getBoundingClientRect().top + eye.clientHeight / 2;
+                    
+                    let radian = 
+                    
+                    Math.atan2(event.pageX - x, event.pageY - y);
+                    
+                    let rot = 
+                    
+                    radian * (180 / Math.PI) * -1 + 270;
+                    
+                    eye.style.transform = 
+
+                    "rotate(" + 0 + "deg)";
+
+                });
+}
+        </script>
+ </body>
 </html>
