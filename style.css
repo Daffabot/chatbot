@@ -34,7 +34,7 @@
 .chat-box {
   line-height: 1.5;
   color: white;
-  max-height: 100%;
+  max-height: 80%;
   overflow-x: hidden;
   overflow-y: visible;
   margin: 4px 4px 4px 4px;
