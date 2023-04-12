@@ -73,7 +73,8 @@
 .chat-input-container {
   position: relative;
   height: 10%;
-  width: 70%;
+  width: 100%;
+  left: 5px;
   display: flex;
   align-items: left;
   justify-content: left;
@@ -81,11 +82,11 @@
 }
 
 .chat-submit {
-  width: 70px;
+  width: 50px;
   height: 40px !important;
   padding: 2px 2px 2px 2px;
-  align-items: left;
-  justify-content: left;
+  align-items: center;
+  justify-content: center;
   border: 2px solid black;
   background-color: #CCECF8;
   font-size: 18px;
