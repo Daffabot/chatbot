@@ -1,0 +1,170 @@
+ body, .bg {
+  max-height: 1%;
+  margin: 0;
+  font-family: sans-serif;
+  -ms-overflow-style: scrollbar;
+  overflow-style: scrollbar;
+  background-color: #20DFDF;
+}
+
+#prime {
+  max-width: 700px;
+  margin: auto;
+  height: 100vh;
+  background-color: #20DFDF;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-box-container {
+  margin: 0;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 0;
+}
+
+.chat-box-header {
+  display: block;
+  text-align: center;
+}
+
+.chat-box {
+  line-height: 1.5;
+  color: white;
+  max-height: 80%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  margin: 4px 4px 4px 4px;
+  border: 2px solid black;
+  flex-grow: 1;
+  background-color: #FFF;
+}
+
+.chat-box p {
+  margin: 0;
+  padding: 6px;
+  font-size: 26px;
+}
+
+#main {
+  display: block;
+  overflow: auto;
+}
+
+#chatbot-date,
+#user-date {
+  font-size: 10px;
+  clear: both;
+}
+
+#chatbot-date {
+  float: left;
+  margin-left: 6px;
+}
+
+#user-date {
+  float: right;
+  margin-right: 6px;
+}
+
+.chat-input-container {
+  position: relative;
+  height: 10%;
+  width: 100%;
+  left: 5px;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  overflow: block;
+}
+
+.chat-submit {
+  width: 50px;
+  height: 40px !important;
+  padding: 2px 2px 2px 2px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  background-color: #CCECF8;
+  font-size: 18px;
+}
+
+.chat-submit:hover {
+  cursor: pointer;
+  background-color: #80BBFF;
+}
+
+.chat-submit:focus {
+  outline: 0;
+}
+
+@media screen and (max-width: 480px) {
+  .chat-box p {
+    font-size: 30px;
+  }
+  .chat-input {
+    width: 100%;
+    float: left;
+    font-size: 28px;
+  }
+  .chat-submit {
+    float: center;
+	align-items: left;
+  justify-content: left;
+  }
+}
+
+span { 
+	color: #711; 
+} 
+::-webkit-input-placeholder { 
+	color: #711;
+}
+#main div { 
+	margin: 10px; 
+}
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #CCECF8;
+  background-image: url("https://raw.githubusercontent.com/Daffabot/chatbot/main/send.png");
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  transition: width 0.4s ease-in-out;
+}
+input[type=text]:focus {
+  width: 80%;
+  border: 2px solid #C4E4EE;
+  background-color: #CCECF8;
+}
+.profile {
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px;
+  text-align: center;
+}
+
+.profile img {
+float: left;
+object-fit: contain;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+    border: 3px solid #ccc;
+}
+
+.profile figcaption {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.profile h1 {
+float: left;
+}
