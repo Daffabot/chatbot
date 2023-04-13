@@ -1,2 +1,2 @@
-# chatbot.github.io
-Chatbot yang dikembangkan oleh Daffa Ahmad Ibrahim
+# daffabot.my.id/chatbot
+Chatbot yang dibuat oleh Daffa Ahmad Ibrahim
