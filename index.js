@@ -12,4 +12,4 @@ app.get('/', (req, res) => {
 	res.render('index.html');
 })
 
-app.listen(() => console.log(`server is up!`));
+app.listen(() => console.log(`Server is up!`));
