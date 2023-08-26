@@ -3,6 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/daffabot/chatbot.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "keywords": [
+    "Daffabot",
+    "Chatbot"
+  ],
+  "author": "Daffabot",
+  "homepage": "http://www.daffabot.my.id",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
