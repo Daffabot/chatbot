@@ -97,7 +97,7 @@ body, .bg {
     border-radius: 25px;
     border: 2px solid #ccc;
     background-color: #CCECF8;
-    background-image: url(../assets/image/send.png);
+    background-image: url(./image/send.png);
     background-position: 12px 12px;
     background-repeat: no-repeat;
     font-size: 18px;
