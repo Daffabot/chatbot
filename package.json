@@ -8,7 +8,7 @@
     "url": "git://github.com/daffabot/chatbot.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "@daffabot:registry": "https://npm.pkg.github.com"
   },
   "keywords": [],
   "author": "daffabot",
