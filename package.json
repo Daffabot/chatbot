@@ -1,7 +1,7 @@
 {
-  "name": "server-side-react",
+  "name": "@daffabot/chatbot",
   "version": "1.0.0",
-  "description": "",
+  "description": "Chatbot yang dibuat oleh Daffa Ahmad Ibrahim",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -10,22 +10,21 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "keywords": [
-    "Daffabot",
-    "Chatbot"
-  ],
-  "author": "Daffabot",
+  "keywords": [],
+  "author": "daffabot",
   "homepage": "http://www.daffabot.my.id",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
     "express-react-views": "^0.11.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/daffabot/chatbot/issues"
+  },
+  "devDependencies": {}
 }
